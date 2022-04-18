@@ -64,6 +64,14 @@ public class FileManager {
 		
 		// store the hash in the replicafiles array.
 
+		replicafiles = new BigInteger[numReplicas];
+		String file;
+		for(int i = 0; i < numReplicas; i++){
+			file = filename + i;
+			BigInteger Ha = Hash.hashOf(file);
+			replicafiles[i] = Ha;
+		}
+
 	}
 	
     /**

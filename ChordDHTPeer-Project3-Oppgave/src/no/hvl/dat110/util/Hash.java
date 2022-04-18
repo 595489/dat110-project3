@@ -12,23 +12,27 @@ import java.net.UnknownHostException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+
 public class Hash { 
 	
-	private static BigInteger hashint; 
+	private static BigInteger hashint;
+	private static int digest;
 	
 	public static BigInteger hashOf(String entity) {		
 		
-		// Task: Hash a given string using MD5 and return the result as a BigInteger.
-		
-		// we use MD5 with 128 bits digest
-		
-		// compute the hash of the input 'entity'
-		
-		// convert the hash into hex format
-		
-		// convert the hex into BigInteger
-		
-		// return the BigInteger
+		try{
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			md.update(entity.getBytes());
+			byte[] dig = md.digest(entity.getBytes("utf8"));
+			digest = dig.length*8;
+			String hex = toHex(dig);
+
+			hashint = new BigInteger(hex, 16);
+
+		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e){
+
+			e.printStackTrace();
+		}
 		
 		return hashint;
 	}
@@ -44,17 +48,20 @@ public class Hash {
 		// compute the address size = 2 ^ number of bits
 		
 		// return the address size
-		
-		return null;
+
+		BigInteger size = BigInteger.valueOf((long) Math.pow(2, digest));
+
+		return size;
 	}
 	
 	public static int bitSize() {
-		
-		int digestlen = 0;
-		
+
+		//int digestlen = 0;
+
 		// find the digest length
-		
-		return digestlen*8;
+
+		//return digestlen*8;
+		return digest;
 	}
 	
 	public static String toHex(byte[] digest) {
