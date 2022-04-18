@@ -40,8 +40,9 @@ public class ChordLookup {
 		// if logic returns false; call findHighestPredecessor(key)
 		
 		// do return highest_pred.findSuccessor(key) - This is a recursive call until logic returns true
+
 				
-		return null;					
+		return null;
 	}
 	
 	/**

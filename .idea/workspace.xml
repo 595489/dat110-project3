@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e5229ac-24a0-4e63-8f3e-fa4757e859f6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dat110-project3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dat110-project3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChordDHTPeer-Project3-Oppgave/src/no/hvl/dat110/middleware/ChordLookup.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChordDHTPeer-Project3-Oppgave/src/no/hvl/dat110/middleware/ChordLookup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChordDHTPeer-Project3-Oppgave/src/no/hvl/dat110/util/Hash.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChordDHTPeer-Project3-Oppgave/src/no/hvl/dat110/util/Hash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChordDHTPeer-Project3-Oppgave/src/no/hvl/dat110/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChordDHTPeer-Project3-Oppgave/src/no/hvl/dat110/util/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +46,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DHTTestFileReplicas" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <configuration name="no.hvl.dat110.unit.tests in dat110-project3" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="dat110-project3" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="PACKAGE_NAME" value="no.hvl.dat110.unit.tests" />
-      <option name="MAIN_CLASS_NAME" value="no.hvl.dat110.unit.tests.DHTTestFileReplicas" />
+      <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -67,7 +69,7 @@
       <updated>1650303104438</updated>
       <workItem from="1650303105762" duration="1192000" />
       <workItem from="1650304318077" duration="212000" />
-      <workItem from="1650304542686" duration="967000" />
+      <workItem from="1650304542686" duration="4603000" />
     </task>
     <servers />
   </component>
