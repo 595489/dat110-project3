@@ -27,7 +27,7 @@ public class FileReplicator extends SwingWorker<Void, Integer> {
 	@Override
 	protected Void doInBackground() throws Exception {
 		
-		try {			
+		/*try {
 			filemanager.readFile();
 			counter = filemanager.distributeReplicastoPeers();			
 		} catch(IOException e) {
@@ -37,7 +37,7 @@ public class FileReplicator extends SwingWorker<Void, Integer> {
             setProgress(0);
             cancel(true);
 		} 
-				
+				*/
 		return null;
 	} 
 	

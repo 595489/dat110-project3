@@ -24,6 +24,7 @@ public class FileDistributorClient {
 	
 	public static void doDistribute() throws NoSuchAlgorithmException, IOException {
 		// use this node to distribute files to active peers
+		/*
 		String path = "./files/";														// absolute path to the files
 		String[] files = {"file1.txt","file2.txt","file3.txt","file4.txt","file5.txt"}; // we just limit to 5 files
 		
@@ -37,6 +38,8 @@ public class FileDistributorClient {
 			fm.readFile();
 			fm.distributeReplicastoPeers();												// distribute the replicas to active peers
 		}
+		*/
+
 	}
 	
 	
