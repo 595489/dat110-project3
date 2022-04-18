@@ -19,6 +19,7 @@ import java.util.Random;
 import java.util.Set;
 
 import no.hvl.dat110.middleware.Message;
+import no.hvl.dat110.middleware.Node;
 import no.hvl.dat110.rpc.interfaces.NodeInterface;
 import no.hvl.dat110.util.Hash;
 
@@ -80,11 +81,21 @@ public class FileManager {
 	 * @return counter
      * @throws RemoteException 
      */
-    public int distributeReplicastoPeers() throws RemoteException {
+    public int distributeReplicastoPeers(byte[] bytesOfFile) throws RemoteException {
     	int counter = 0;
     	
     	// Task1: Given a filename, make replicas and distribute them to all active peers such that: pred < replica <= peer
-    	
+    	Random rand = new Random();
+		int index = rand.nextInt(Util.numReplicas-1);
+		createReplicaFiles();
+
+		for (BigInteger key : replicafiles){
+			NodeInterface successor = chordnode.findSuccessor(key);
+			successor.addKey(key);
+			successor.saveFileContent(filename, key, bytesOfFile, counter == index);
+			counter++;
+		}
+
     	// Task2: assign a replica as the primary for this file. Hint, see the slide (project 3) on Canvas
     	
     	// create replicas of the filename
@@ -116,9 +127,16 @@ public class FileManager {
 		// Task: Given a filename, find all the peers that hold a copy of this file
 		
 		// generate the N replicas from the filename by calling createReplicaFiles()
-		
+		createReplicaFiles();
+
 		// it means, iterate over the replicas of the file
-		
+		for (int i = 0; i < this.numReplicas; i++){
+			BigInteger nr = this.replicafiles[i];
+			NodeInterface successor = this.chordnode.findSuccessor(nr);
+			Message msg = successor.getFilesMetadata(nr);
+			succinfo.add(msg);
+		}
+
 		// for each replica, do findSuccessor(replica) that returns successor s.
 		
 		// get the metadata (Message) of the replica from the successor, s (i.e. active peer) of the file
@@ -137,7 +155,13 @@ public class FileManager {
 	public NodeInterface findPrimaryOfItem() {
 
 		// Task: Given all the active peers of a file (activeNodesforFile()), find which is holding the primary copy
-		
+		for (Message msg : activeNodesforFile){
+			if (msg.isPrimaryServer()){
+				NodeInterface primary = Util.getProcessStub(msg.getNodeIP(), msg.getPort());
+
+				return primary;
+			}
+		}
 		// iterate over the activeNodesforFile
 		
 		// for each active peer (saved as Message)
