@@ -23,13 +23,12 @@ public class Hash {
 		try{
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			md.update(entity.getBytes());
-			byte[] dig = md.digest(entity.getBytes("utf8"));
-			digest = dig.length*8;
+			byte[] dig = md.digest(/*entity.getBytes("utf8")*/);
 			String hex = toHex(dig);
-
+			digest = dig.length*8;
 			hashint = new BigInteger(hex, 16);
 
-		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e){
+		} catch (NoSuchAlgorithmException e){
 
 			e.printStackTrace();
 		}
