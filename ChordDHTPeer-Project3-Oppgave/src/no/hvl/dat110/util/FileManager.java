@@ -77,6 +77,7 @@ public class FileManager {
     /**
      * 
      * @param bytesOfFile
+	 * @return counter
      * @throws RemoteException 
      */
     public int distributeReplicastoPeers() throws RemoteException {
@@ -241,7 +242,7 @@ public class FileManager {
 		return sizeOfByte;
 	}
 	/**
-	 * @param size the size to set
+	 * @param sizeOfByte the size to set
 	 */
 	public void setSizeOfByte(String sizeOfByte) {
 		this.sizeOfByte = sizeOfByte;
